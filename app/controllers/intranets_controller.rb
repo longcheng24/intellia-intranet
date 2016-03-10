@@ -1,0 +1,2 @@
+class IntranetsController < ApplicationController
+end
