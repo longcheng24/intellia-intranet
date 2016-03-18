@@ -28,6 +28,8 @@ gem 'bootstrap-sass'
 
 # devise
 gem 'devise'
+#consuning rss feeds
+gem 'feedjira'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
