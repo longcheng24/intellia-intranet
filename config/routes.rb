@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :feeds
+  
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
-  # devise_for :users
 
   devise_scope :user do
     authenticated :user do
@@ -13,5 +14,11 @@ Rails.application.routes.draw do
       get 'users/signup', to: 'devise/registrations#new', as: :new_registration
     end
   end
-  
+
+  namespace :api do
+    namespace :v1 do
+      resources :users
+    end
+  end
+
 end
