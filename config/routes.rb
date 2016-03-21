@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     unauthenticated do
       root 'users/sessions#new', as: :unauthenticated_root
-      get 'users/signup', to: 'devise/registrations#new', as: :new_registration
+      get 'users/sign_up', to: 'users/registrations#new', as: :new_registration
     end
   end
 
