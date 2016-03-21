@@ -2,6 +2,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
+    # def configure_devise_params
+    #   devise_parameter_sanitizer.for(:sign_up) do |u|
+    #     u.permit(:title, :first_name, :last_name, :email, :password, :password_confirmation, :department)
+    #   end
+    #   devise_parameter_sanitizer.for(:account_update) do |u|
+    #     u.permit(:title, :first_name, :last_name, :email, :password, :password_confirmation, :department)
+    #   end
+    # end
+
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -36,12 +46,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.for(:sign_up) << :attribute
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
@@ -57,4 +67,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:title, :first_name, :last_name, :department, :email, :password, :password_confirmation)
+  end
 end
