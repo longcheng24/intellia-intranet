@@ -30,6 +30,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 #consuning rss feeds
 gem 'feedjira'
+# angularjs
+gem 'angularjs-rails'
 
 gem 'twitter-bootstrap-rails'
 
