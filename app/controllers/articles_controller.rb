@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   # before_action :set_feed, only: :index
+  layout "application"
 
   def index
     @articles = Article.order('published_date desc')
-
 
   end
 

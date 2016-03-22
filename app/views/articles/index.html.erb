@@ -1,54 +1,51 @@
-<div ng-app="app">
-  <div ng-controller="JsonArticleCtrl" ng-init="setup()">
 
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon">Search</div>
-        <input type="text" class="form-control" placeholder="Search articles" ng-model="search">
+
+<div class="col-md-7 contentCol">
+    <div ng-controller="JsonArticleCtrl" ng-init="setup()">
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">Search</div>
+          <input type="text" class="form-control" placeholder="Search articles" ng-model="search">
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <h3>Articles Information</h3>
+      <div class="row">
 
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover">
-          <tbody>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Thumbnail</th>
-              <th>published_date</th>
-              <th>content</th>
-              <th>author</th>
-            </tr>
-            <tr dir-paginate="article in articles | filter:search | itemsPerPage:5">
-              <td>{{ article.title}}</td>
-              <td>{{ article.description}}</td>
-              <td>{{ article.thumbnail}}</td>
-              <td>{{ article.published_date}}</td>
-              <td>{{ article.content}}</td>
-              <td>{{ article.author}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <dir-pagination-controls
-       max-size="5"
-       direction-links="true"
-       boundary-links="true" >
-    </dir-pagination-controls>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover">
+            <tbody>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Thumbnail</th>
+                <th>published_date</th>
+                <th>content</th>
+                <th>author</th>
+              </tr>
+              <tr dir-paginate="article in articles | filter:search | itemsPerPage:5">
+                <td>{{ article.title}}</td>
+                <td>{{ article.description}}</td>
+                <td>{{ article.thumbnail}}</td>
+                <td>{{ article.published_date}}</td>
+                <td>{{ article.content}}</td>
+                <td>{{ article.author}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+        </div>
       </div>
+
+      <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+      <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>
+      </li>
+      <% end %>
+
     </div>
-
-    <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-    </li>
-    <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>
-    </li>
-    <% end %>
-
-  </div>
 </div>
