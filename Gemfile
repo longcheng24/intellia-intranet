@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
 #carrierwave for user profile pics
 gem 'carrierwave'
+#Fog for Amazon uploads
+gem "fog"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
