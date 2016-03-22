@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  mount_uploader :photo, UserPhotoUploader #AWS bucket: intellia-intranet, folder: profile_pics
   
 	# scope :human_resources, -> { where department: HUMANRESOURCES }
 	# scope :finance, -> { where department: FINANCE }
