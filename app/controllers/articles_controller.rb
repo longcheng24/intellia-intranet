@@ -2,8 +2,9 @@ class ArticlesController < ApplicationController
   # before_action :set_feed, only: :index
 
   def index
-    @articles = Article.order('published_date desc').paginate(:page => params[:page], :per_page => 4)
-  
+    @articles = Article.order('published_date desc')
+
+
   end
 
   def show
