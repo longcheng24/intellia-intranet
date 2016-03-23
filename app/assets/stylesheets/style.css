@@ -2,6 +2,7 @@ body{
   background:url('intranet_bg.jpg');
   background-size: contain 100vh;
   background-attachment: fixed;
+  color: #f8f8f8
 }
 .profileCol > div{
   position: fixed;
