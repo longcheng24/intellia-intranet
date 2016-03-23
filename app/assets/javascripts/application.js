@@ -13,6 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require twitter/bootstrap
+//= require turbolinks
 //= require angular
 //= require_tree .
