@@ -9,16 +9,25 @@
 	<body>
 
 <div class="container" ng-app="app">
-		<% if user_signed_in? %>
+
 		<div class="col-md-3 profileCol">
+			<% if user_signed_in? %>
 		  <div class="imageLine">
+				<% if current_user.photo? %>
 		    <%= image_tag(current_user.photo, class:"img-responsive")  %>
+				<% else %>
+				<img src="http://www.johndoe.pro/img/John_Doe.jpg" class="img-responsive">
+				<% end %>
 		  </div>
 		  <div class="nameLine">
-		    <%= current_user.first_name + " " +  current_user.last_name %>
+				<% if current_user.first_name? and current_user.last_name? %>
+		    <p><%= current_user.first_name + " " +  current_user.last_name %></p>
+				<% else %>
+				<p>I'm Jonn Doe</p>
+				<% end %>
 		  </div>
 		  <div class="departLine">
-		    <%= current_user.department  %>
+		    <p><%= current_user.department  %></p>
 		  </div>
 		  <div class="lastLoginLine">
 		    <p>Last Login: <%= current_user.last_sign_in_at  %></p>
@@ -56,7 +65,12 @@
 		      </div>
 		    </div>
 		  </div>
-
+			<% else %>
+				<div>
+					<img src="http://www.johndoe.pro/img/John_Doe.jpg" class="img-responsive">
+					<p>Intranet</p>
+				</div>
+			<% end %>
 		</div>
 		<div class="col-md-2 menuCol">
 		  <ul>
@@ -66,7 +80,7 @@
 		    <li>CALENDAR</li>
 		  </ul>
 		</div>
-		<% end %>
+
 		<div class="col-md-7 contentCol">
 			<%= yield %>
 		</div>
