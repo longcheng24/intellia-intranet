@@ -2,10 +2,11 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  mount_uploader :photo, UserPhotoUploader #AWS bucket: intellia-intranet, folder: profile_pics
-  
+  mount_uploader :photo, UserPhotoUploader
+	
+	validates :first_name, :last_name, presence: true  
 	# scope :human_resources, -> { where department: HUMANRESOURCES }
 	# scope :finance, -> { where department: FINANCE }
 	# scope :research_development -> { where department: RESEARCH }
