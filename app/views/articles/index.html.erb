@@ -25,7 +25,7 @@
               </tr>
               <tr dir-paginate="article in articles | filter:search | itemsPerPage:5">
                 <td>{{ article.title}}</td>
-                <td>{{ article.description}}</td>
+                <td>{{ article.description}}.html_safe</td>
                 <td>{{ article.thumbnail}}</td>
                 <td>{{ article.published_date}}</td>
                 <td>{{ article.content}}</td>

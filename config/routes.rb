@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'accounts/show'
+
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 
   devise_scope :user do
@@ -12,9 +14,10 @@ Rails.application.routes.draw do
       get 'users/sign_up', to: 'users/registrations#new', as: :new_registration
     end
   end
-  
+
   resources :feeds
   resources :articles
+  resources :accounts
 
 
   namespace :api do
