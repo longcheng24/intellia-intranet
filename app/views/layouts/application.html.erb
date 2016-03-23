@@ -11,6 +11,7 @@
 <div class="container" ng-app="app">
 
 		<div class="col-md-3 profileCol">
+			<div>
 			<% if user_signed_in? %>
 		  <div class="imageLine">
 				<% if current_user.photo? %>
@@ -61,13 +62,16 @@
 				</div>
 			<% end %>
 		</div>
+		</div>
 		<div class="col-md-2 menuCol">
+			<div>
 		  <ul>
 		    <li><a href="/">ARTICLES</a></li>
 		    <li>TECHNOLOGIES</li>
 		    <li>TWITTER</li>
 		    <li>CALENDAR</li>
 		  </ul>
+		</div>
 		</div>
 
 		<div class="col-md-7 contentCol">

@@ -8,30 +8,16 @@
       </div>
 
       <div class="row">
+              <div dir-paginate="article in articles | filter:search | itemsPerPage:4">
+                <div><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></div>
+                <div>{{ article.description}}</div>
+                <div>{{ article.thumbnail}}</div>
+                <div>{{ article.published_date}}</div>
+                <div>{{ article.content}}</div>
+                <div>{{ article.author}}</div>
+              </div>
 
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped table-hover">
-            <tbody>
-              <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Thumbnail</th>
-                <th>published_date</th>
-                <th>content</th>
-                <th>author</th>
-              </tr>
-              <tr dir-paginate="article in articles | filter:search | itemsPerPage:5">
-                <td><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></td>
-                <td>{{ article.description}}</td>
-                <td>{{ article.thumbnail}}</td>
-                <td>{{ article.published_date}}</td>
-                <td>{{ article.content}}</td>
-                <td>{{ article.author}}</td>
-              </tr>
-            </tbody>
-          </table>
           <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
-        </div>
       </div>
 
       <% if user_signed_in? %>
