@@ -7,7 +7,9 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
+
 <div class="container" ng-app="app">
+		<% if user_signed_in? %>
 		<div class="col-md-3 profileCol">
 		  <div class="imageLine">
 		    <%= image_tag(current_user.photo, class:"img-responsive")  %>
@@ -22,38 +24,38 @@
 		    <p>Last Login: <%= current_user.last_sign_in_at  %></p>
 		  </div>
 
-			<div ng-controller="JsonUserCtrl" ng-init="setup()">
+		  <div ng-controller="JsonUserCtrl" ng-init="setup()">
 
-				<div class="form-group">
-					<div class="input-group">
-						<div class="input-group-addon">Search</div>
-						<input type="text" class="form-control" placeholder="Search users" ng-model="search">
-					</div>
-				</div>
+		    <div class="form-group">
+		      <div class="input-group">
+		        <div class="input-group-addon">Search</div>
+		        <input type="text" class="form-control" placeholder="Search users" ng-model="search">
+		      </div>
+		    </div>
 
-				<div class="row">
-					<h3>Users Information</h3>
+		    <div class="row">
+		      <h3>Users Information</h3>
 
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover">
-							<tbody>
-								<tr>
-									<th>Email</th>
-									<th>First Name</th>
-									<th>Last Name</th>
-									<th>Department</th>
-								</tr>
-								<tr ng-repeat="user in users | filter:search">
-									<td>{{ user.email}}</td>
-									<td>{{ user.first_name}}</td>
-									<td>{{ user.last_name}}</td>
-									<td>{{ user.department}}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+		      <div class="table-responsive">
+		        <table class="table table-bordered table-striped table-hover">
+		          <tbody>
+		            <tr>
+		              <th>Email</th>
+		              <th>First Name</th>
+		              <th>Last Name</th>
+		              <th>Department</th>
+		            </tr>
+		            <tr ng-repeat="user in users | filter:search">
+		              <td>{{ user.email}}</td>
+		              <td>{{ user.first_name}}</td>
+		              <td>{{ user.last_name}}</td>
+		              <td>{{ user.department}}</td>
+		            </tr>
+		          </tbody>
+		        </table>
+		      </div>
+		    </div>
+		  </div>
 
 		</div>
 		<div class="col-md-2 menuCol">
@@ -64,11 +66,11 @@
 		    <li>CALENDAR</li>
 		  </ul>
 		</div>
+		<% end %>
 
 		<%= yield %>
+</div>
 
 
-
-		</div>
 	</body>
 </html>
