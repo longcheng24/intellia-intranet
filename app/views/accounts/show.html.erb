@@ -2,4 +2,5 @@
 
 <p>First Name: <%= @user.first_name %></p>
 <p>Last Name: <%= @user.last_name %></p>
-<p>Photo: <img src=<%= @user.photo %></p>
+<p>Department: <%= @user.department %></p>
+<p>Photo: <%= image_tag @user.photo.url.to_s %></p>
