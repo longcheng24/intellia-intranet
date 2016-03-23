@@ -1,6 +1,30 @@
+body{
+  background:url('intranet_bg.jpg');
+  background-size: contain 100vh;
+  background-attachment: fixed;
+}
+.profileCol > div{
+  position: fixed;
+  width: 15%;
+}
 .profileList{
   clear:both
 }
 .profileList img{
   border-radius: 50%;
+}
+.menuCol{
+  position: relative;
+}
+.menuCol >div {
+  position: fixed;
+}
+.menuCol ul{
+  padding: 0 25px;
+  background: rgba(206, 217, 218, 0.8);
+}
+
+.menuCol li{
+  height:25vh;
+  list-style: none;
 }
