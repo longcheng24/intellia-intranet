@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'intranets#index'
+      root to: 'articles#index'
     end
 
     unauthenticated do

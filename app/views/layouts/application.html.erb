@@ -16,7 +16,7 @@
 				<% if current_user.photo? %>
 		    <%= image_tag(current_user.photo, class:"img-responsive")  %>
 				<% else %>
-				<img src="http://www.johndoe.pro/img/John_Doe.jpg" class="img-responsive">
+				<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg" class="img-responsive">
 				<% end %>
 		  </div>
 		  <div class="nameLine">
@@ -30,7 +30,7 @@
 		    <p><%= current_user.department  %></p>
 		  </div>
 		  <div class="lastLoginLine">
-		    <p>Last Login: <%= current_user.last_sign_in_at  %></p>
+		    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
 		  </div>
 
 		  <div ng-controller="JsonUserCtrl" ng-init="setup()">
@@ -38,43 +38,32 @@
 		    <div class="form-group">
 		      <div class="input-group">
 		        <div class="input-group-addon">Search</div>
-		        <input type="text" class="form-control" placeholder="Search users" ng-model="search">
+		        <input type="text" class="form-control" placeholder="Search users" ng-model="search.full_name">
 		      </div>
 		    </div>
 
 		    <div class="row">
-		      <h3>Users Information</h3>
-
-		      <div class="table-responsive">
-		        <table class="table table-bordered table-striped table-hover">
-		          <tbody>
-		            <tr>
-		              <th>Email</th>
-		              <th>First Name</th>
-		              <th>Last Name</th>
-		              <th>Department</th>
-		            </tr>
-		            <tr ng-repeat="user in users | filter:search">
-		              <td>{{ user.email}}</td>
-		              <td><a ng-href="/accounts/{{user.id}}">{{ user.first_name}}</a></td>
-		              <td>{{ user.last_name}}</td>
-		              <td>{{ user.department}}</td>
-		            </tr>
-		          </tbody>
-		        </table>
-		      </div>
+		            <div ng-repeat="user in users | filter:search" class="profileList">
+		              <div class="col-md-3" ng-if="user.photo.photo.url">
+										<img src="{{ user.photo.photo.url }}", class="img-responsive" />
+									</div>
+									<div class="col-md-3" ng-if="!user.photo.photo.url">
+										<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg", class="img-responsive" />
+									</div>
+		              <div class="col-md-9"><a ng-href="/accounts/{{user.id}}">{{ user.full_name}}</a></div>
+		            </div>
 		    </div>
 		  </div>
 			<% else %>
 				<div>
-					<img src="http://www.johndoe.pro/img/John_Doe.jpg" class="img-responsive">
+					<img src="http://www.intelliatx.com/wp-content/uploads/2015/11/intellia-logo.jpg" class="img-responsive">
 					<p>Intranet</p>
 				</div>
 			<% end %>
 		</div>
 		<div class="col-md-2 menuCol">
 		  <ul>
-		    <li>ARTICLES</li>
+		    <li><a href="/">ARTICLES</a></li>
 		    <li>TECHNOLOGIES</li>
 		    <li>TWITTER</li>
 		    <li>CALENDAR</li>
