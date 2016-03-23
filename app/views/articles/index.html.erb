@@ -1,6 +1,3 @@
-
-
-<div class="col-md-7 contentCol">
     <div ng-controller="JsonArticleCtrl" ng-init="setup()">
 
       <div class="form-group">
@@ -24,7 +21,7 @@
                 <th>author</th>
               </tr>
               <tr dir-paginate="article in articles | filter:search | itemsPerPage:5">
-                <td>{{ article.title}}</td>
+                <td><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></td>
                 <td>{{ article.description}}</td>
                 <td>{{ article.thumbnail}}</td>
                 <td>{{ article.published_date}}</td>
@@ -48,4 +45,3 @@
       <% end %>
 
     </div>
-</div>
