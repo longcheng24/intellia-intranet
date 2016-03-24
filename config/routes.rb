@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'accounts/show'
-
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
 
   devise_scope :user do
@@ -15,7 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  # resources :users
+  resources :users, only: [:show, :edit, :update]
 
   resources :feeds
   resources :articles

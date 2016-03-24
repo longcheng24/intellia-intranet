@@ -4,4 +4,4 @@
 <h5><%= @user.department %></h5>
 <h5><%= @user.email %></h5>
 <h5><%= @user.phone %></h5>
-<%= link_to 'Edit', edit_user_registration_path %>
+<%= link_to 'Edit', edit_user_registration_path if current_user && user_signed_in? %>
