@@ -18,4 +18,5 @@
 //= require turbolinks
 //= require angular
 //= require twitter
+//= custom
 //= require_tree .

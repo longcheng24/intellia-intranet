@@ -77,7 +77,16 @@
 					</a>
 				</li>
 
-				<li><a href="#"><%= image_tag("TechIcon.png", class:"img-responsive") %><h5>SOFTWARES</h5></a></li>
+				<li>
+					<a href="/software">
+					<% if @software_active %>
+					<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
+					<% else %>
+					<%= image_tag("TechIcon.png", class:"img-responsive") %>
+					<% end %>
+					<h5>SOFTWARE</h5>
+				</a>
+			</li>
 
 				<li><a href="/tweets/"><%= image_tag("TwitterIcon.png", class:"img-responsive") %><h5>TWITTER</h5></a></li>
 

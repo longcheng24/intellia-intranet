@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   get '/tweets/', to: 'tweets#show'
 
-
+  resources :software
+  
   namespace :api do
     namespace :v1 do
       get 'json/users'
