@@ -1,0 +1,12 @@
+<h1 class="contentTitle">SOFTWARE</h1>
+
+
+<% if current_user.admin %>
+  <%= render("admin") %>
+<% else %>
+  <% if current_user.human_resources? %>
+    <div>
+  <%= render("hr") %>
+    </div>
+  <% end %>
+<% end %>
