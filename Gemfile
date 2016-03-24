@@ -43,6 +43,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'will_paginate'
 
+# simple calendar Rails gem
+gem "simple_calendar", "~> 2.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

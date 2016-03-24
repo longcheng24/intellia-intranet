@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   mount_uploader :photo, UserPhotoUploader
-	
-	validates :first_name, :last_name, presence: true  
+
+  has_many :events
+
+	validates :first_name, :last_name, presence: true
 	# scope :human_resources, -> { where department: HUMANRESOURCES }
 	# scope :finance, -> { where department: FINANCE }
 	# scope :research_development -> { where department: RESEARCH }
@@ -21,7 +23,7 @@ class User < ActiveRecord::Base
   # DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH, ALL]
 
   # def self.departments
-  # 	DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] } 
+  # 	DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] }
   # end
 
   # def self.department_name department_value
