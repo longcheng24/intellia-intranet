@@ -4,11 +4,12 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.order('published_date desc')
-
+    @article_active = 1
   end
 
   def show
     @article = Article.find(params[:id])
+    @article_active = 1
   end
 
   # private

@@ -13,6 +13,7 @@
     }
 
     window.scope = $scope;
+
   });
 
   angular.module("app").controller("JsonUserCtrl", function($scope, $http) {

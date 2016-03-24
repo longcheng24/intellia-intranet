@@ -20,17 +20,17 @@
 				<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg" class="img-responsive">
 				<% end %>
 		  </div>
-		  <div class="nameLine">
+		  <div class="nameLine text-center">
 				<% if current_user.first_name? and current_user.last_name? %>
-		    <p><%= current_user.first_name + " " +  current_user.last_name %></p>
+		    <h3><%= current_user.first_name + " " +  current_user.last_name %></h3>
 				<% else %>
-				<p>I'm Jonn Doe</p>
+				<h1>I'm Jonn Doe</h1>
 				<% end %>
 		  </div>
-		  <div class="departLine">
+		  <div class="departLine text-center">
 		    <p><%= current_user.department  %></p>
 		  </div>
-		  <div class="lastLoginLine">
+		  <div class="lastLoginLine text-center">
 		    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
 		  </div>
 
@@ -38,12 +38,12 @@
 
 		    <div class="form-group">
 		      <div class="input-group">
-		        <div class="input-group-addon">Search</div>
+		        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
 		        <input type="text" class="form-control" placeholder="Search users" ng-model="search.full_name">
 		      </div>
 		    </div>
 
-		    <div class="row">
+		    <div class="row plContainer">
 		            <div ng-repeat="user in users | filter:search" class="profileList">
 		              <div class="col-md-3" ng-if="user.photo.photo.url">
 										<img src="{{ user.photo.photo.url }}", class="img-responsive" />
@@ -65,11 +65,23 @@
 		</div>
 		<div class="col-md-2 menuCol">
 			<div>
-		  <ul>
-		    <li><a href="/">ARTICLES</a></li>
-		    <li>TECHNOLOGIES</li>
-		    <li>TWITTER</li>
-		    <li>CALENDAR</li>
+		  <ul class="text-center">
+		    <li>
+					<a href="/">
+						<% if @article_active %>
+						<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
+						<% else %>
+						<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
+						<% end %>
+						<h5>ARTICLES</h5>
+					</a>
+				</li>
+
+				<li><a href="#"><%= image_tag("TechIcon.png", class:"img-responsive") %><h5>SOFTWARES</h5></a></li>
+
+				<li><a href="#"><%= image_tag("TwitterIcon.png", class:"img-responsive") %><h5>TWITTER</h5></a></li>
+
+				<li><a href="#"><%= image_tag("CalendarIcon.png", class:"img-responsive") %><h5>CALENDAR</h5></a></li>
 		  </ul>
 		</div>
 		</div>
