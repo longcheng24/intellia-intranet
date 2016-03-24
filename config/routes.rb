@@ -18,11 +18,12 @@ Rails.application.routes.draw do
 
   resources :feeds
   resources :articles
+  resources :calendars
 
   get '/tweets/', to: 'tweets#show'
 
   resources :software
-  
+
   namespace :api do
     namespace :v1 do
       get 'json/users'
