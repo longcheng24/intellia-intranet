@@ -1,0 +1,7 @@
+<img src="<%= @user.photo.url %>" alt="<%= @user.first_name %><%= @user.last_name %>" class="img-responsive" />
+<h2><%= @user.first_name %> <%= @user.last_name %></h2>
+<h5><%= @user.title %></h5>
+<h5><%= @user.department %></h5>
+<h5><%= @user.email %></h5>
+<h5><%= @user.phone %></h5>
+<%= link_to 'Edit', edit_user_registration_path %>
