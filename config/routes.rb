@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users
+
   resources :feeds
   resources :articles
   resources :accounts
