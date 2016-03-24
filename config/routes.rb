@@ -18,7 +18,8 @@ Rails.application.routes.draw do
 
   resources :feeds
   resources :articles
-  resources :accounts
+
+  get '/tweets/', to: 'tweets#show'
 
 
   namespace :api do
