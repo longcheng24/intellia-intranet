@@ -8,8 +8,28 @@ class CalendarsController < ApplicationController
   end
 
   def create
-    @event = Event.create(calendar_params)
-    render 'index'
+    @event = Event.new(calendar_params)
+    @event.save
+    redirect_to(:action => 'index')
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(calendar_params)
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to(:action => 'index')
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   private
