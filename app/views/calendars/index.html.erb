@@ -1,19 +1,7 @@
-<p>Add Event</p>
-
-  <%= form_for :event do |f| %>
-    <%= f.label :title %>:
-    <%= f.text_field :title %><br />
-    <%= f.label :start_time %>:
-    <%= f.datetime_select :start_time %><br />
-    <%= f.hidden_field :user_id, :value => current_user.id%><br />
-    <%= f.label :submit %>:
-    <%= f.submit  %>
-  <% end %>
-
-
-<%= month_calendar do |date| %>
+<%= month_calendar events:@events do |date, events| %>
   <%= date %>
+  <% events.each do |event| %>
+    <p>Title: <%= link_to "#{event.title}", :action => "show" %><p>
+    <p>Start Time: <%= event.start_time %><p>
+  <% end %>
 <% end %>
-
-<p>Title: <%= @event.title %><p>
-<p>Start Time: <%= @event.start_time %><p>
