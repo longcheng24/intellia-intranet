@@ -1,3 +1,6 @@
 <p>Show Page</p>
 
-<a href="/calendars/@event.id/edit" class="btn btn-info" role="button">Edit</a>
+<%= link_to("Edit", {:action => 'edit', :id => @event.id}, :class => 'action edit') %>
+
+
+<%= link_to "Delete", "/calendars/#{@event.id}", {method: :delete, class: "btn btn-warning"} %>

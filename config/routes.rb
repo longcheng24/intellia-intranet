@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   resources :feeds
   resources :articles
   resources :calendars
-  get '/calendars/show'
+  resources :events
+
+  post '/calendars/:id' => 'calendars#update'
+
+
 
   get '/tweets/', to: 'tweets#show'
 

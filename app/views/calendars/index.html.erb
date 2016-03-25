@@ -1,7 +1,7 @@
 <%= month_calendar events:@events do |date, events| %>
   <%= date %>
   <% events.each do |event| %>
-    <p>Title: <%= link_to "#{event.title}", :action => "show" %><p>
+    <p> Title: <%= link_to("#{event.title}", {:action => 'show', :id => event.id}, :class => 'action show') %></p>
     <p>Start Time: <%= event.start_time %><p>
   <% end %>
 <% end %>
