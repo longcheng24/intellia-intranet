@@ -1,6 +1,6 @@
 <p>Edit Page</p>
 
-<%= form_for :event, url: { action: ""} do |f| %>
+<%= form_for(:event, :url => {:action => 'update', :id => @event.id}) do |f| %>
   <%= f.label :title %>:
   <%= f.text_field :title %><br />
   <%= f.label :start_time %>:
