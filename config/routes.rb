@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   resources :feeds
   resources :articles
   resources :calendars
-  resources :events
-
   post '/calendars/:id' => 'calendars#update'
 
 
