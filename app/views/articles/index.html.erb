@@ -1,34 +1,37 @@
 <div ng-controller="JsonArticleCtrl" ng-init="setup()">
+  <div class="row"><!--START row title/search-->
+    <div class="col-sm-6">
       <h1 class="contentTitle">ARTICLES</h1>
+    </div>
+    <div class="col-sm-6">
       <div class="form-group articleSerach" >
         <div class="input-group">
           <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
-          <input type="text" class="form-control" placeholder="Search articles" ng-model="search">
+          <input type="text" class="form-control" placeholder="Article Search" ng-model="search">
         </div>
       </div>
-
-
-      <div class="row">
-              <div dir-paginate="article in articles | filter:search | itemsPerPage:4" class="col-md-6 articleGrid">
-
-                <div ng-if="article.thumbnail" class="articleThum"><a ng-href="/articles/{{ article.id }}">{{ article.thumbnail}}</a></div>
-                <div ng-if="!article.thumbnail" class="articleThum">
-                  <a ng-href="/articles/{{ article.id }}"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDOUljVPVYCJBSPTWpnHYq87YwdG-5FGX0GzPrN7zi_W9kTeF5rw" width="350" height="120"></a>
-                </div>
-
-                <h5><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></h5>
-
-                <div ng-if="article.author" class="authorLine">{{ article.author}}</div>
-                <div ng-if="!article.author" class="authorLine">John Doe</div>
-
-                <div class="dateLine"><i>{{ article.published_date }}</i></div>
-
-              </div>
-              <div class="clear"></div>
-
-
-          <dir-pagination-controls class="col-md-12" max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
-
+    </div>
+  </div><!--END row title/search-->
+  <div class="row"><!--START row ARTICLE-->
+    <div dir-paginate="article in articles | filter:search | itemsPerPage:4" class="col-md-6 articleGrid">
+      <div ng-if="article.thumbnail" class="articleThum"><a ng-href="/articles/{{ article.id }}">{{ article.thumbnail}}</a></div>
+      <div ng-if="!article.thumbnail" class="articleThum">
+        <a ng-href="/articles/{{ article.id }}"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDOUljVPVYCJBSPTWpnHYq87YwdG-5FGX0GzPrN7zi_W9kTeF5rw" width="350" height="120"></a>
       </div>
 
+      <h5><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></h5>
+
+      <div ng-if="article.author" class="authorLine">{{ article.author}}</div>
+      <div ng-if="!article.author" class="authorLine">John Doe</div>
+
+      <div class="dateLine"><i>{{ article.published_date }}</i></div>
+
     </div>
+
+    <div class="clear"></div>
+
+    <dir-pagination-controls class="col-md-12" max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+
+  </div>
+
+</div>

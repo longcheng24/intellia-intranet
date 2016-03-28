@@ -9,6 +9,12 @@ body{
   background-size: 100% 100vh;
   background-attachment: fixed;
 }
+h1{
+  font-size: 2em;
+}
+.container-fluid{
+  padding:0 5%;
+}
 a:hover{
   text-decoration: none;
   background: none;
@@ -29,12 +35,12 @@ a:hover{
   color: #f8f8f8
 }
 .articleSerach{
-  width: 40%;
-float: right;
-margin-top: 20px;
+  width: 60%;
+  float: right;
+  margin-top: 20px;
 }
 .articleThum{
-overflow: hidden;
+  overflow: hidden;
 }
 .articleThum{
   max-width: 100%
@@ -135,6 +141,34 @@ overflow: hidden;
 .contentCol{
   height: 100vh;
   overflow-y: scroll;
+/*****
+Search Styling
+***/
+.form-group{
+  border:1px solid rgba(255,255,255,0.25);
+}
+.input-group-addon {
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+}
+.form-control {
+  color: #FFF;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.form-control:focus {
+  border-color: transparent;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .nameLine a{
   color:#f8f8f8;
