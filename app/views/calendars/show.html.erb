@@ -1,6 +1,4 @@
 <p>Show Page</p>
 
-<%= link_to("Edit", {:action => 'edit', :id => @event.id}, :class => 'action edit') %>
-
-
-<%= link_to "Delete", "/calendars/#{@event.id}", {method: :delete, class: "btn btn-warning"} %>
+<%= link_to "Edit", edit_calendar_path %>
+<%= link_to "Delete", "/calendars/#{@calendar.id}", {method: :delete, class: "btn btn-warning"} %>
