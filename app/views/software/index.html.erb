@@ -5,8 +5,16 @@
   <%= render("admin") %>
 <% else %>
   <% if current_user.human_resources? %>
-    <div>
-  <%= render("hr") %>
-    </div>
+  <div>
+    <%= render("hr") %>
+  </div>
+  <% elsif current_user.finance?%>
+  <div>
+    <%= render("finance") %>
+  </div>
+  <% elsif current_user.research_development?%>
+  <div>
+    <%= render("rd") %>
+  </div>
   <% end %>
 <% end %>

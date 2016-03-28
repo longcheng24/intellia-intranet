@@ -34,8 +34,8 @@
 		    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
 		  </div>
 
-		  <div ng-controller="JsonUserCtrl" ng-init="setup()">
 
+		  <div ng-controller="JsonUserCtrl" ng-init="setup()">
 		    <div class="form-group">
 		      <div class="input-group">
 		        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
@@ -44,7 +44,7 @@
 		    </div>
 
 		    <div class="row plContainer">
-		            <div ng-repeat="user in users | filter:search" class="profileList">
+		            <div ng-repeat="user in users | filter:search" class="profileList" ng-if="user.id != <%= current_user.id %>">
 		              <div class="col-md-3" ng-if="user.photo.photo.url">
 										<img src="{{ user.photo.photo.url }}", class="img-responsive" />
 									</div>

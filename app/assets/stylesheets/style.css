@@ -128,3 +128,11 @@ overflow: hidden;
 .sofwareDepTitl{
   color: #f8f8f8;
 }
+.softList img{
+  max-width: 80%;
+  margin: auto;
+}
+.contentCol{
+  height: 100vh;
+  overflow-y: scroll;
+}
