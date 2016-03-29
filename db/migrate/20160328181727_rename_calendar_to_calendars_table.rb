@@ -1,5 +1,8 @@
 class RenameCalendarToCalendarsTable < ActiveRecord::Migration
-  def change
+  def up
     rename_table :calendar, :calendars
+  end
+  def down
+    rename_table :calendars, :calendar
   end
 end
