@@ -1,0 +1,328 @@
+html{
+  /*overflow: hidden;*/
+  h1,h2,h3,h4,h5,h6,p,label{
+    color:#FFF;
+  }
+  a{
+    color:#74b5ae;
+    &:visited{
+      color:#FFF;
+    }
+  }
+  ul, ol{
+    margin: 0
+  }
+  body{
+  background:url('intranet_bg.jpg');
+  background-size: 100% 100vh;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+    h1{
+      font-size: 2em;
+    }
+    .container-fluid{
+      padding:0;
+      @media all and (min-width: 992px){
+        padding:0 2%;
+      }
+    }
+    a:hover{
+      text-decoration: underline;
+      background: none;
+    }
+    .clear{
+      clear: both;
+    }
+    .contentTitle{
+      display: inline-block;
+      border-bottom: 3px groove #f8f8f8;
+      color: #f8f8f8;
+    }
+    .articleGrid{
+      min-height: 38vh;
+      h5 a{
+        text-transform: uppercase;
+        color: #f8f8f8
+      }
+    }
+    .articleSerach{
+      width: 100%;
+      float: none;
+      margin-top: 20px;
+      @media all and (min-width: 992px){
+        width:60%;
+        float: right;
+      }
+    }
+    .articleThum{
+      overflow: hidden;
+      max-width: 100%
+    }
+    .profileCol{
+      margin-top: 20px;
+      color: #f8f8f8;
+      .profileInfo{
+        margin-bottom: 20px;
+        .imageLine img{
+          border-radius: 50%;
+        }
+        .nameLine{
+          h4{
+            margin-top:0;
+          }
+        }
+        .lastLoginLine{
+          .logout, .edit{
+            width:47%;
+          }
+          .logout{
+            margin-right: 3%;
+          }
+        }
+      }
+    }
+    .plContainer{
+      height: 28vh;
+      overflow-y: scroll;
+      color: #f8f8f8;
+      .profileList{
+        clear:both;
+        .profileRow{
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+          align-items: center;
+          margin:0 -15px 10px -15px;
+          padding:0 15px;
+          .profilePic{
+            width:12%;
+            margin-right: 5%;
+            img{
+              border-radius: 50%;
+              display: block;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          .profileName{
+            width:83%;
+          }
+        }
+      }
+    }
+    .menuCol{
+      position: relative;
+      h5{
+        color:#6c6c6c;
+      }
+      a{
+        h5:hover{
+          color:#cb481e;
+        }
+        color: #000;
+        &:visted{
+        }
+        &:hover{
+          color:#cb481e;
+          text-decoration: none;
+        }
+        &:active{
+          color:#cb481e;
+        }
+      }
+      ul{
+        padding: 0 25px;
+        background: rgba(206, 217, 218, 0.8);
+        li{
+          height:25vh;
+          list-style: none;
+          border-bottom: solid 2px #6c6c6c;
+          padding-top: 50px;
+          &:last-child{
+            border-bottom: none;
+          }
+        }
+      }
+      img{
+        margin: auto;
+      }
+    }
+    .menuColMobile{
+      width:100%;
+      margin:0;
+      position: fixed;
+      bottom:0;
+      background-color: rgba(206, 217, 218, 1.0);
+      z-index: 56;
+      height: 50px;
+      padding-top: 6px;
+      ul.menuColMobileMenu{
+        padding:0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        li{
+          a{
+            text-indent: -1000px;
+          }
+        }
+      }
+    }
+    .authorLine, .dateLine{
+      color:#cccccc
+    }
+    .softName{
+      margin-top: 25px;
+      color: #74b5ae;
+    }
+    .softDesc{
+      color: #cccccc;
+    }
+    .softList{
+      text-align: center;
+      margin-bottom: 50px;
+      margin-top:35px
+    }
+    .softwareAdminTab a{
+      display: inline-block;
+      color: #f8f8f8;
+      text-decoration: none;
+      margin-right: 30px;
+    }
+    .activeTab h5{
+      color: #cb481e;
+    }
+    .sofwareDepTitl{
+      color: #f8f8f8;
+    }
+    .softList img{
+      max-width: 80%;
+      margin: auto;
+    }
+    .contentCol{
+      height: 100vh;
+      overflow-y: scroll;
+      i{
+        color:#FFF;
+      }
+      .imageLine img{
+        border-radius: 50%;
+      }
+    }
+    /*****
+    Form Sytling
+    ***/
+    .field{
+      i, input[type="file"], em{
+        color:#FFF;
+      }
+    }
+    /*****
+    Search Styling
+    ***/
+    .form-group{
+      border:1px solid rgba(255,255,255,0.25);
+      .input-group-addon {
+        color: #FFF;
+        background-color: transparent;
+        border: none;
+      }
+      .form-control {
+        color: #FFF;
+        background-color: transparent;
+        background-image: none;
+        border: none;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        &:focus {
+          border-color: transparent;
+          outline: 0;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    /*****
+    Article Pagination
+    ***/
+    .article-nav{
+      width:100%;
+      margin:0 auto;
+      padding-bottom: 50px;
+    }
+    @media all and (min-width:768px){
+      .article-nav{
+        width:50%;
+      }
+    }
+    /*****
+    Profile Show
+    ***/
+
+    /*****
+    Bootstrap Overrides
+    ***/
+    .btn{
+      color:#FFF;
+    }
+    .btn{
+      border-radius: 0;
+      background-color: transparent;
+      border:1px solid rgba(255,255,255,0.25);
+      font-size: .85em;
+      &:hover{
+        background-color:rgba(255,255,255,0.15);
+        color:#FFF;
+      }
+    }
+    #new_user{
+      input{
+        padding:8px 4px;
+        width:100%;
+      }
+      input[type="email"],input[type="password"]{
+        background-color:#FFF !important;
+        border:none;
+        /*the following is a chrome hack to override yellow color*/
+        &:-webkit-autofill{
+          -webkit-box-shadow: 0 0 0 100px #fff inset;
+          -moz-box-shadow: 0 0 0 100px #fff inset;
+          box-shadow: 0 0 0 100px #fff inset;
+        }
+      }
+    }
+    .pagination>li>a, .pagination>li>span{
+      background-color: transparent;
+      color:#74b5ae;
+    }
+    .pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus{
+      color: #FFF;
+      background-color: #74b5ae;
+      border-color: #74b5ae;
+    }
+    .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+      background-color:#74b5ae;
+      border-color:#74b5ae;  
+    }
+    .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus{
+      color: #FFF;
+      background-color: transparent;
+    }
+    .pagination>li:last-child>a, .pagination>li:last-child>span{
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .pagination>li:first-child>a, .pagination>li:first-child>span{
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+  } /*body end*/
+}/*html end*/
