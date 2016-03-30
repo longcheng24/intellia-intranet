@@ -1,11 +1,18 @@
-<h1>Add Event</h1>
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="contentTitle">CALENDAR</h1>
+	</div>
+</div>
 
-<%= link_to "Add Calendar Event", new_calendar_path %>
-
-<%= month_calendar events: @calendars do |date, calendars| %>
-  <%= date %>
-  <% calendars.each do |calendar| %>
-    <p> Title: <%= link_to("#{calendar.title}", {:action => 'show', :id => calendar.id}, :class => 'action show') %></p>
-    <p>Start Time: <%= calendar.start_time %><p>
-  <% end %>
-<% end %>
+<div class="row">
+	<div class="col-sm-12">
+	<%= link_to "Add Calendar Event", new_calendar_path %>
+	<%= month_calendar events: @calendars do |date, calendars| %>
+	  <%= date %>
+	  <% calendars.each do |calendar| %>
+	    <p> Title: <%= link_to("#{calendar.title}", {:action => 'show', :id => calendar.id}, :class => 'action show') %></p>
+	    <p>Start Time: <%= calendar.start_time %></p>
+	  <% end %>
+	<% end %>
+	</div>
+</div>
