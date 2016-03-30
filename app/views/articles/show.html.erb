@@ -1,5 +1,7 @@
-<h3><%= link_to @article.title, @article.link %></h3>
-  <i>published on <%= @article.published_date %> by <%= @article.author %></i>
-  <p>
-    <%= @article.description.to_s.html_safe %>
-  </p>
+<div class="row">
+	<div class="col-sm-12">
+		<h3><%= link_to @article.title, @article.link %></h3>
+		<i>published on <%= @article.published_date %> by <%= @article.author %></i>
+		<p><%= @article.description.to_s.html_safe %></p>
+	</div>
+</div>

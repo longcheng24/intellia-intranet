@@ -1,9 +1,20 @@
-<img src="<%= @user.photo.url %>" alt="<%= @user.first_name %><%= @user.last_name %>" class="img-responsive" />
-<h2><%= @user.first_name %> <%= @user.last_name %></h2>
-<h5><%= @user.title %></h5>
-<h5><%= @user.department %></h5>
-<h5><%= @user.email %></h5>
-<h5><%= @user.phone %></h5>
-<% if current_user.id == @user.id %>
-<%= link_to 'Edit', edit_user_registration_path %>
-<% end %>
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="contentTitle"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h1>
+	</div>
+	<div class="col-sm-4">
+		<div class="imageLine">
+			<img src="<%= @user.photo.url %>" alt="<%= @user.first_name %><%= @user.last_name %>" class="img-responsive" />
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<h3><em><%= @user.title %></em></h3>
+		<h5><%= @user.department %></h5>
+		<h5><%= @user.email %></h5>
+		<h5><%= @user.phone %></h5>
+		<% if current_user.id == @user.id %>
+			<%= link_to 'EDIT', edit_user_registration_path, class: 'btn edit' %>
+			<%= link_to('LOGOUT', destroy_user_session_path, class: 'btn logout', method: :delete) %>
+		<% end %>
+	</div>
+</div>

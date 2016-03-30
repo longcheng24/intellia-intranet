@@ -5,119 +5,177 @@
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
-
-<div class="container-fluid" ng-app="app">
-
-		<div class="col-md-3 profileCol">
-			<div>
+		<div class="container-fluid" ng-app="app"><!--START ng-app-->
+			<!--check user signed in, if yes, display profile and menu-->
 			<% if user_signed_in? %>
-		  <div class="imageLine">
-				<% if current_user.photo? %>
-		    <%= image_tag(current_user.photo, class:"img-responsive")  %>
-				<% else %>
-				<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg" class="img-responsive">
-				<% end %>
-		  </div>
-		  <div class="nameLine text-center">
-				<% if current_user.first_name? and current_user.last_name? %>
+				<div class="col-md-3 profileCol"><!--START profile column-->
+					<div class="row profileInfo"><!--current user profile row-->
+						<div class="col-xs-4">
+						  <div class="imageLine"><!--photo-->
+								<% if current_user.photo? %>
+									<%= link_to (image_tag(current_user.photo, class:"img-responsive")), user_path(current_user.id) %>
+						  </div><!--end photo-->
+					  </div>
+					  <div class="col-xs-8">
+						  <div class="nameLine"><!--employee name-->
+								<% if current_user.first_name? and current_user.last_name? %>
+						    	<h4><%= current_user.first_name + " " +  current_user.last_name %></h4>
+								<% else %>
+									<h1>Intellia Employee</h1>
+								<% end %>
+						  </div><!--end employee name-->
 
-				<a href="/users/<%= current_user.id %>">
-					<h3><%= "#{current_user.first_name.upcase} #{ current_user.last_name.upcase}" %></h3>
-				</a>
-				<% else %>
-				<h1>I'm Jonn Doe</h1>
-				<% end %>
-		  </div>
-		  <div class="departLine text-center">
-		    <p><%= current_user.department  %></p>
-		  </div>
-		  <div class="lastLoginLine text-center">
-		    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
-		  </div>
+						  <div class="lastLoginLine"><!--last login name-->
+						    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
+						    <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, class: 'btn logout') %>
+						    <%= link_to('PROFILE', user_path(current_user.id), class: 'btn edit') %>
+						  </div><!--last login name-->
+					  </div>
+				  </div><!--end current user profile row-->
 
+				  <div ng-controller="JsonUserCtrl" ng-init="setup()"><!--index users json-->
+				  <div class="row">
+				  	<div class="col-xs-12">
+					    <div class="form-group">
+					      <div class="input-group">
+					        <div class="input-group-addon">
+					        	<i class="glyphicon glyphicon-search"></i>
+					        </div>
+					        <input type="text" class="form-control" placeholder="Employee Search" ng-model="search">
+					      </div>
+					    </div>
+				    </div>
+				  </div>
 
-		  <div ng-controller="JsonUserCtrl" ng-init="setup()">
-		    <div class="form-group">
-		      <div class="input-group">
-		        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
-		        <input type="text" class="form-control" placeholder="Employee Search" ng-model="search">
-		      </div>
-		    </div>
-
-		    <div class="row plContainer">
-		            <div ng-repeat="user in users | filter:search" class="profileList" ng-if="user.id != <%= current_user.id %>">
-		              <div class="col-md-3" ng-if="user.photo.photo.url">
-										<img src="{{ user.photo.photo.url }}", class="img-responsive" />
+				    <div class="plContainer">
+		          <div ng-repeat="user in users | filter:search" class="profileList" ng-if="user.id != <%= current_user.id %>">
+		          	<div class="profileRow">
+			            <div class="profilePic" ng-if="user.photo.photo.url">
+										<img src="{{ user.photo.photo.url }}" />
 									</div>
-									<div class="col-md-3" ng-if="!user.photo.photo.url">
-										<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg", class="img-responsive" />
+
+									<div class="profilePic" ng-if="!user.photo.photo.url">
+										<img src="http://www.animate.tv/news/visual/2014/1418909723_2_2_5c2e5ce96cb05993516842f8ad958c3e.jpg" />
 									</div>
-		              <div class="col-md-9"><a ng-href="/users/{{user.id}}">{{ user.full_name}}</a></div>
+
+			            <div class="profileName">
+			            	<a ng-href="/users/{{user.id}}">{{ user.full_name}}</a>
+			            </div>
 		            </div>
-		    </div>
-		  </div>
-			<% else %>
-				<div>
-					<img src="http://www.intelliatx.com/wp-content/uploads/2015/11/intellia-logo.jpg" class="img-responsive">
-					<p>Intranet</p>
-				</div>
-			<% end %>
-		</div>
-		</div>
-		<div class="col-md-2 menuCol">
-			<div>
-		  <ul class="text-center">
-		    <li>
-					<a href="/">
-						<% if @article_active %>
-						<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
-						<% else %>
-						<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
+				      </div>
+				    </div>
+
+				  </div><!--end index users json-->				
+				</div><!--END profile column-->
+				
+				<div class="col-md-2 menuCol hidden-xs hidden-sm"><!--START menu column desktop-->
+				  <ul class="text-center">
+				    <li>
+							<a href="/">
+								<% if @article_active %>
+								<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
+								<% else %>
+								<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
+								<% end %>
+								<h5>ARTICLES</h5>
+							</a>
+						</li>
+
+						<li>
+							<a href="/software">
+							<% if @software_active %>
+							<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
+							<% else %>
+							<%= image_tag("TechIcon.png", class:"img-responsive") %>
+							<% end %>
+							<h5>SOFTWARE</h5>
+						</a>
+					</li>
+
+						<li>
+
+							<a href="/tweets/">
+							<% if @twitter_active %>
+							<%= image_tag("TwitterIconColor.png", class:"img-responsive") %>
+							<% else %>
+							<%= image_tag("TwitterIcon.png", class:"img-responsive") %>
+							<% end %>
+							<h5>TWITTER</h5>
+							</a>
+						</li>
+
+						<li><a href="/calendars/">
+							<% if @calendar_active %>
+							<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
+							<% else %>
+						<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
 						<% end %>
-						<h5>ARTICLES</h5>
-					</a>
-				</li>
-
-				<li>
-					<a href="/software">
-					<% if @software_active %>
-					<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
-					<% else %>
-					<%= image_tag("TechIcon.png", class:"img-responsive") %>
-					<% end %>
-					<h5>SOFTWARE</h5>
-				</a>
-			</li>
-
-				<li>
-
-					<a href="/tweets/">
-					<% if @twitter_active %>
-					<%= image_tag("TwitterIconColor.png", class:"img-responsive") %>
-					<% else %>
-					<%= image_tag("TwitterIcon.png", class:"img-responsive") %>
-					<% end %>
-					<h5>TWITTER</h5>
-					</a>
-				</li>
-
-				<li><a href="/calendars/">
-					<% if @calendar_active %>
-					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
-					<% else %>
-				<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
+						<h5>CALENDAR</h5></a></li>
+				  </ul>
 				<% end %>
-				<h5>CALENDAR</h5></a></li>
-		  </ul>
-		</div>
-		</div>
+				</div><!--END menu column desktop-->
+				<div class="col-md-2 menuColMobile visible-xs visible-sm"><!--START menu column desktop-->
+				  <ul class="text-center menuColMobileMenu">
+				    <li>
+							<a href="/">
+								<% if @article_active %>
+								<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
+								<% else %>
+								<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
+								<% end %>
+								<h5>ARTICLES</h5>
+							</a>
+						</li>
 
-		<div class="col-md-7 contentCol">
-			<%= yield %>
-		</div>
-</div>
+						<li>
+							<a href="/software">
+							<% if @software_active %>
+							<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
+							<% else %>
+							<%= image_tag("TechIcon.png", class:"img-responsive") %>
+							<% end %>
+							<h5>SOFTWARE</h5>
+						</a>
+					</li>
+
+						<li>
+
+							<a href="/tweets/">
+							<% if @twitter_active %>
+							<%= image_tag("TwitterIconColor.png", class:"img-responsive") %>
+							<% else %>
+							<%= image_tag("TwitterIcon.png", class:"img-responsive") %>
+							<% end %>
+							<h5>TWITTER</h5>
+							</a>
+						</li>
+
+						<li><a href="/calendars/">
+							<% if @calendar_active %>
+							<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
+							<% else %>
+						<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
+						<% end %>
+						<h5>CALENDAR</h5></a></li>
+				  </ul>
+				</div><!--END menu column desktop-->
+			<% end %>
+
+			<!--check user signed in, if yes, display adjust content div size to account for profile and menu-->
+			<% if user_signed_in? %>
+				<div class="col-md-7 contentCol">
+			<% else %>
+				<div class="col-md-12 contentCol">
+			<% end %>
+
+					<%= yield %>
+
+				</div>
+		</div><!--END ng-app-->
 
 	</body>
 </html>
