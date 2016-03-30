@@ -210,6 +210,9 @@ html{
       .imageLine img{
         border-radius: 50%;
       }
+      #user_remember_me{
+        width: 10px;
+      }
     }
     /*****
     Form Sytling
@@ -309,7 +312,7 @@ html{
     }
     .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
       background-color:#74b5ae;
-      border-color:#74b5ae;  
+      border-color:#74b5ae;
     }
     .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus{
       color: #FFF;
