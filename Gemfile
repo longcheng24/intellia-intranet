@@ -43,6 +43,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'will_paginate'
 
+#omniauth for oAuth
+gem 'omniauth'
+gem 'omniauth-azure-activedirectory'
+
 # simple calendar Rails gem
 gem "simple_calendar", "~> 2.0"
 # Use ActiveModel has_secure_password
