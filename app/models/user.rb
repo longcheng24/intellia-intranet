@@ -9,45 +9,46 @@ class User < ActiveRecord::Base
   has_many :events
 
 	validates :first_name, :last_name, presence: true
-	# scope :human_resources, -> { where department: HUMANRESOURCES }
-	# scope :finance, -> { where department: FINANCE }
-	# scope :research_development -> { where department: RESEARCH }
-	# scope :all, -> { where department: ALL }
 
-  # HUMANRESOURCES	= 10
-  # FINANCE					= 20
-  # RESEARCH				= 30
-  # ALL 						= 40
+	scope :human_resources, -> { where department: HUMANRESOURCES }
+  scope :finance, -> { where department: FINANCE }
+  scope :research_development, -> { where department: RESEARCH }
+
+  HUMANRESOURCES  = 10
+  FINANCE         = 20
+  RESEARCH        = 30
 
   DEPARTMENT_NAMES = ['Human Resources', 'Finance', 'R&D']
-  # DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH, ALL]
+  DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH]
 
-  # def self.departments
-  # 	DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] }
-  # end
+  DISPLAY_NAMES = {HUMANRESOURCES => 'Human Resources', FINANCE => 'Finance', RESEARCH => 'Research & Development'}.freeze
 
-  # def self.department_name department_value
-  # 	DEPARTMENT_NAMES[DEPARTMENT_VALUES.index department_value]
-  # end
+  def self.departments
+    DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] }
+  end
 
-  # def self.department_value department_name
-  # 	DEPARTMENT_VALUES[DEPARTMENT_NAMES.index department_name]
-  # end
+  def self.department_name department_value
+    DEPARTMENT_NAMES[DEPARTMENT_VALUES.index department_value]
+  end
+
+  def self.department_value department_name
+    DEPARTMENT_VALUES[DEPARTMENT_NAMES.index department_name]
+  end
 
   def human_resources?
-  	department == 'Human Resources'
+    department == HUMANRESOURCES
   end
 
   def finance?
-  	department == 'Finance'
+    department == FINANCE
   end
 
   def research_development?
-  	department == 'R&D'
+    department == RESEARCH
   end
 
-  # def all?
-  # 	department == 'All'
-  # end
+  def user_dept
+    DISPLAY_NAMES[self.department] || 'Research & Development'
+  end
 
 end

@@ -23,7 +23,7 @@
 
       <div class="field">
         <%= f.label :department %><br />
-        <%= f.collection_select :department, User::DEPARTMENT_NAMES, :to_s, :to_s, department: true, class:'dropdown-menu', autofocus: true %>
+        <%= f.select :department, User.departments, prompt: 'Select Your Department', department: true, class:'dropdown-menu', autofocus: 'true' %>
       </div>
 
       <div class="field">
