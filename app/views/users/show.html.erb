@@ -9,7 +9,7 @@
 	</div>
 	<div class="col-sm-8">
 		<h3><em><%= @user.title %></em></h3>
-		<h5><%= @user.user_dept %></h5>
+		<h5><%= @user.department_name %></h5>
 		<h5><%= @user.email %></h5>
 		<h5><%= @user.phone %></h5>
 		<% if current_user.id == @user.id %>
