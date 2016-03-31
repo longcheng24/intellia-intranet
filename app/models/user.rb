@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   mount_uploader :photo, UserPhotoUploader
 
@@ -21,8 +21,6 @@ class User < ActiveRecord::Base
   DEPARTMENT_NAMES = ['Human Resources', 'Finance', 'R&D']
   DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH]
 
-  DISPLAY_NAMES = {HUMANRESOURCES => 'Human Resources', FINANCE => 'Finance', RESEARCH => 'Research & Development'}.freeze
-
   def self.departments
     DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] }
   end
@@ -35,6 +33,10 @@ class User < ActiveRecord::Base
     DEPARTMENT_VALUES[DEPARTMENT_NAMES.index department_name]
   end
 
+  def department_name
+    User.department_name department
+  end
+
   def human_resources?
     department == HUMANRESOURCES
   end
@@ -45,10 +47,6 @@ class User < ActiveRecord::Base
 
   def research_development?
     department == RESEARCH
-  end
-
-  def user_dept
-    DISPLAY_NAMES[self.department] || 'Research & Development'
   end
 
 end
