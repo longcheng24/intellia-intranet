@@ -12,6 +12,9 @@ html{
   ul, ol{
     margin: 0
   }
+  input{
+    padding:8px 4px;
+  }
   body{
   background:url('intranet_bg.jpg');
   background-size: 100% 100vh;
@@ -266,11 +269,61 @@ html{
       }
     }
     /*****
-    Profile Show
+    Calendar View
     ***/
+    .simple-calendar{
+      text-align: center;
+      color:#FFF;
+      table.table{
+        margin-top: 20px;
+        thead{
+          tr{
+            th{
+              text-align: center;
+              font-weight: normal;
+              border:none;
+            }
+          }
+        }
+        tbody{
+          tr{
+            td{
+              border:none;
+              font-size: 1.5em;
+              p{
+                a{
+                font-size: 1em;
+                }
+              }
+            }
+          }
+        }
+        tr{
+          border:0;
+          td{
+            width:14.28571428571429%;
+            height: 100px;
+          }
+        }
+      }
+      .table-striped>tbody>tr:nth-child(odd) {
+        background-color: transparent;
+      }
+    }
+    .calendar_new{
+      width:25%;
+      margin-bottom: 20px;
+    }
+    .new_cal_event{
+      color:#FFF;
+      input{
+        margin-bottom: 10px;
+      }
+    }
 
     /*****
     Bootstrap Overrides
+      BUTTONS
     ***/
     .btn{
       color:#FFF;
@@ -285,9 +338,12 @@ html{
         color:#FFF;
       }
     }
+    /*****
+    Bootstrap Overrides
+      FORMS
+    *****/
     #new_user{
       input{
-        padding:8px 4px;
         width:100%;
       }
       input[type="email"],input[type="password"]{
@@ -301,6 +357,17 @@ html{
         }
       }
     }
+    select {
+      background: rgba(255,255,255,0.25);
+      color:#FFF;
+      padding: 5px;
+      border:1px solid rgba(255,255,255,0.25);
+      border-radius:0;
+      height: 34px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      }
     .pagination>li>a, .pagination>li>span{
       background-color: transparent;
       color:#74b5ae;
