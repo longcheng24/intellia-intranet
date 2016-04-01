@@ -19,4 +19,4 @@
 //= require angular
 //= require twitter
 //= custom
-//= require_tree .
+//= require_self .
