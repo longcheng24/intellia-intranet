@@ -1,11 +1,14 @@
-<p>Edit Page</p>
-
-<%= form_for(:calendar, :url => {:action => 'update', :id => @calendar.id}) do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
-  <%= f.label :start_time %>:
-  <%= f.datetime_select :start_time %><br />
-  <%= f.hidden_field :user_id, :value => current_user.id%><br />
-  <%= f.label :submit %>:
-  <%= f.submit  %>
-<% end %>
+<div class="row">
+	<div class="col-sm-12 new_cal_event">
+		<h1 class="contentTitle">EDIT EVENT</h1>
+		<%= form_for(:calendar, :url => {:action => 'update', :id => @calendar.id}) do |f| %>
+		  <%= f.label :title %>:
+		  <%= f.text_field :title %><br />
+		  <%= f.label :start_time %>:
+		  <%= f.datetime_select :start_time %><br />
+		  <%= f.hidden_field :user_id, :value => current_user.id%><br />
+		  <%= f.label :submit %>:
+		  <%= f.submit  %>
+		<% end %>
+	</div>
+</div>
