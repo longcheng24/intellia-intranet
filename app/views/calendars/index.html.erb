@@ -6,12 +6,19 @@
 
 <div class="row">
 	<div class="col-sm-12">
-	<%= link_to "ADD EVENT +", new_calendar_path, class: 'btn center-block calendar_new' %>
+	<% if current_user.admin? %>
+		<%= link_to "ADD EVENT +", new_calendar_path, class: 'btn center-block calendar_new' %>
+	<% end %>
 	<%= month_calendar events: @calendars do |date, calendars| %>
 	  <%= date.strftime("%d") %>
 	  <% calendars.each do |calendar| %>
-	    <p><%= link_to("#{calendar.start_time.strftime("%I:%M%p")}", {:action => 'show', :id => calendar.id}, :class => 'action show') %>
-	    <%= link_to("#{calendar.title}", {:action => 'show', :id => calendar.id}, :class => 'action show') %></p>
+		  <% if current_user.admin? %>
+		    <p><%= link_to("#{calendar.start_time.strftime("%I:%M%p")}", {:action => 'show', :id => calendar.id}, :class => 'action show') %>
+		    <%= link_to("#{calendar.title}", {:action => 'show', :id => calendar.id}, :class => 'action show') %></p>
+		  <% else %>
+		    <p><%= calendar.start_time.strftime("%I:%M%p") %></p>
+		    <p><%= calendar.title %></p>
+		  <% end %>
 	  <% end %>
 	<% end %>
 	</div>
