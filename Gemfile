@@ -47,6 +47,9 @@ gem 'will_paginate'
 gem 'omniauth'
 gem 'omniauth-azure-activedirectory'
 
+#error messaging
+gem 'rails_12factor'
+
 # simple calendar Rails gem
 gem "simple_calendar", "~> 2.0"
 # Use ActiveModel has_secure_password
