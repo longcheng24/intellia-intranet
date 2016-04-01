@@ -10,7 +10,7 @@
     <%= current_user.department  %>
   </div>
   <div class="lastLoginLine">
-    <p>Last Login: <%= current_user.last_sign_in_at  %></p>
+    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%r") %></p>
   </div>
 
   <div ng-controller="JsonUserCtrl" ng-init="setup()">

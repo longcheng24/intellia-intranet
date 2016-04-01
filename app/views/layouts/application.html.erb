@@ -30,7 +30,7 @@
 						  </div><!--end employee name-->
 
 						  <div class="lastLoginLine"><!--last login name-->
-						    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %H:%M")  %></p>
+						    <p>Last Login: <%= current_user.last_sign_in_at.strftime("%b %e, %r")  %></p>
 						    <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, class: 'btn logout') %>
 						    <%= link_to('PROFILE', user_path(current_user.id), class: 'btn edit') %>
 						  </div><!--last login name-->
