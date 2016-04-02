@@ -1,8 +1,3 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 ==RSS NEWSFEED(S) + ARTICLES ON LOCALHOST
 
 Once you've added your rss feeds locally at /feeds/new, you'll need to run a rake task to get feeds into your DB:
