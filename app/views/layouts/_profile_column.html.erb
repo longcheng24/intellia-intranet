@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div class="col-md-3 profileCol">
   <div class="imageLine">
-    <%= image_tag(current_user.photo, class:"img-responsive")  %>
+    <%= image_tag(current_user.photo.thumb, class:"img-responsive")  %>
   </div>
   <div class="nameLine">
     <%= current_user.first_name + " " +  current_user.last_name %>

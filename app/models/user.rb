@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :events
 
-	validates :first_name, :last_name, presence: true
+	validates :title, :first_name, :last_name, :department, :phone, :email, presence: true
+  # validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@intelliatx\.com\z/, message: " must be an intelliatx.com account"}
 
 	scope :human_resources, -> { where department: HUMANRESOURCES }
   scope :finance, -> { where department: FINANCE }
