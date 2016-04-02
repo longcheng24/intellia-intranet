@@ -1,7 +1,7 @@
 ==RSS NEWSFEED(S) + ARTICLES ON LOCALHOST
 
 Once you've added your rss feeds locally at /feeds/new, you'll need to run a rake task to get feeds into your DB:
-	rake sync:feeds
+	<pre><code>rake sync:feeds</code></pre>
 
 You can have as many feeds as you would like and the rake task will build them all into your article list.
 
