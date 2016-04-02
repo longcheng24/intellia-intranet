@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
+prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
 
     # def configure_devise_params
     #   devise_parameter_sanitizer.for(:sign_up) do |u|
@@ -70,6 +71,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
+  def check_captcha
+    if verify_recaptcha
+      true
+    else
+      self.resource = resource_class.new sign_up_params
+      respond_with_navigational(resource) { render :new }
+    end 
+  end
 
   def sign_up_params
     params.require(:user).permit(:title, :first_name, :last_name, :department, :phone, :remove_photo, :email, :photo, :password, :password_confirmation)

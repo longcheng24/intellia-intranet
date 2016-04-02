@@ -4,6 +4,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 #carrierwave for user profile pics
 gem 'carrierwave'
 #Fog for Amazon uploads
+#minimagick gem for cropping of profile images
+gem 'mini_magick', '~> 4.5.1'
 gem "fog"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -46,6 +48,9 @@ gem 'will_paginate'
 #omniauth for oAuth
 gem 'omniauth'
 gem 'omniauth-azure-activedirectory'
+
+#ReCaptcha gem for authentication
+gem "recaptcha", require: "recaptcha/rails"
 
 #error messaging
 gem 'rails_12factor'
