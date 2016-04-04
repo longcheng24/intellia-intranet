@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4 login_panel">
+    <%= image_tag("login_logo.png", class: "img-responsive center-block", alt: 'Intellia Logo') %>
     <h2>LOG IN</h2>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />

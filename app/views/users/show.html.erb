@@ -4,7 +4,11 @@
 	</div>
 	<div class="col-sm-4">
 		<div class="imageLine">
+		<% if @user.photo.thumb.url %>
 			<img src="<%= @user.photo.thumb.url %>" alt="<%= @user.first_name %><%= @user.last_name %>" class="img-responsive" />
+		<% else %>
+			<%= image_tag('login_logo.png', class: 'img-responsive') %>
+		<% end %>
 		</div>
 	</div>
 	<div class="col-sm-8">
