@@ -12,7 +12,7 @@
 		<h5><%= @user.department_name %></h5>
 		<h5><%= @user.email %></h5>
 		<h5><%= @user.phone %></h5>
-		<% if current_user.id == @user.id %>
+		<% if current_user.id == @user.id || current_user.admin? %>
 			<%= link_to 'EDIT', edit_user_registration_path, class: 'btn edit' %>
 			<%= link_to('LOGOUT', destroy_user_session_path, class: 'btn logout', method: :delete) %>
 		<% end %>
