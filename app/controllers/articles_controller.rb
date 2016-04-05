@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   layout "application"
 
   def index
-    @articles = Article.order('published_date asc')
+    @articles = Article.order('published_date ASC')
     @article_active = 1
   end
 

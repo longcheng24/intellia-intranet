@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20160331162512) do
     t.integer  "user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
   create_table "feeds", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
