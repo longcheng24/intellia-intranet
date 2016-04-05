@@ -13,7 +13,7 @@
     </div>
   </div><!--END row title/search-->
   <div class="row"><!--START row ARTICLE-->
-    <div dir-paginate="article in articles | filter:search | itemsPerPage:4" class="col-md-6 articleGrid">
+    <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:4" class="col-md-6 articleGrid">
       <div ng-if="article.thumbnail" class="articleThum"><a ng-href="/articles/{{ article.id }}">{{ article.thumbnail}}</a></div>
       <div ng-if="!article.thumbnail" class="articleThum">
         <a ng-href="/articles/{{ article.id }}"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDOUljVPVYCJBSPTWpnHYq87YwdG-5FGX0GzPrN7zi_W9kTeF5rw" width="350" height="120"></a>
