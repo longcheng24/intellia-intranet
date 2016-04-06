@@ -6,4 +6,5 @@ json.array! @articles do |article|
   json.published_date article.published_date
   json.content article.content
   json.author article.author
+  json.link article.link
 end

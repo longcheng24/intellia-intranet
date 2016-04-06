@@ -13,19 +13,16 @@
     </div>
   </div><!--END row title/search-->
   <div class="row"><!--START row ARTICLE-->
-    <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:4" class="col-md-6 articleGrid">
-      <div ng-if="article.thumbnail" class="articleThum"><a ng-href="/articles/{{ article.id }}">{{ article.thumbnail}}</a></div>
-      <div ng-if="!article.thumbnail" class="articleThum">
-        <a ng-href="/articles/{{ article.id }}"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDOUljVPVYCJBSPTWpnHYq87YwdG-5FGX0GzPrN7zi_W9kTeF5rw" width="350" height="120"></a>
-      </div>
-
-      <h5><a ng-href="/articles/{{ article.id }}">{{ article.title}}</a></h5>
+    <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:6" class="col-md-6 ">
+<div class="custCard articleGrid">
+      <h5><a ng-href="{{article.link}}">{{ article.title}}</a></h5>
 
       <div ng-if="article.author" class="authorLine">{{ article.author}}</div>
       <div ng-if="!article.author" class="authorLine">John Doe</div>
 
       <div class="dateLine"><i>{{ article.published_date }}</i></div>
-
+      <a ng-href="{{article.link}}">Read More</a>
+</div>
     </div>
 
     <div class="clear"></div>

@@ -1,24 +1,36 @@
 <div class="col-md-2 menuCol hidden-xs hidden-sm"><!--START menu column desktop-->
   <ul class="text-center">
-    <li>
-			<a href="/">
-				<% if @article_active %>
-					<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
-				<% else %>
-					<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
-				<% end %>
-				<h5>ARTICLES</h5>
-			</a>
-		</li>
 
-		<li>
+    <li>
 			<a href="/software">
 				<% if @software_active %>
 					<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
 				<% else %>
 					<%= image_tag("TechIcon.png", class:"img-responsive") %>
 				<% end %>
-				<h5>SOFTWARE</h5>
+				<h5>MY TOOLS</h5>
+			</a>
+		</li>
+
+    <li>
+			<a href="/calendars/">
+				<% if @calendar_active %>
+					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
+				<% else %>
+					<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
+				<% end %>
+				<h5>CALENDAR</h5>
+			</a>
+		</li>
+
+    <li>
+			<a href="/" >
+				<% if @article_active %>
+					<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
+				<% else %>
+					<%= image_tag("ArticlesIcon.png", class:"img-responsive") %>
+				<% end %>
+				<h5>ARTICLES</h5>
 			</a>
 		</li>
 
@@ -30,17 +42,6 @@
 					<%= image_tag("TwitterIcon.png", class:"img-responsive") %>
 				<% end %>
 				<h5>TWITTER</h5>
-			</a>
-		</li>
-
-		<li>
-			<a href="/calendars/">
-				<% if @calendar_active %>
-					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
-				<% else %>
-					<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
-				<% end %>
-				<h5>CALENDAR</h5>
 			</a>
 		</li>
   </ul>
@@ -49,6 +50,28 @@
 <div class="col-md-2 menuColMobile visible-xs visible-sm"><!--START menu column mobile-->
   <ul class="text-center menuColMobileMenu">
     <li>
+			<a href="/software">
+				<% if @software_active %>
+					<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
+				<% else %>
+					<%= image_tag("TechIcon.png", class:"img-responsive") %>
+				<% end %>
+				<h5>MY TOOLS</h5>
+			</a>
+		</li>
+
+    <li>
+			<a href="/calendars/">
+				<% if @calendar_active %>
+					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
+				<% else %>
+					<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
+				<% end %>
+				<h5>CALENDAR</h5>
+			</a>
+		</li>
+
+    <li>
 			<a href="/">
 				<% if @article_active %>
 					<%= image_tag("AtriclesIconColor.png", class:"img-responsive") %>
@@ -60,17 +83,6 @@
 		</li>
 
 		<li>
-			<a href="/software">
-				<% if @software_active %>
-					<%= image_tag("TechnologiesIconColor.png", class:"img-responsive") %>
-				<% else %>
-					<%= image_tag("TechIcon.png", class:"img-responsive") %>
-				<% end %>
-				<h5>SOFTWARE</h5>
-			</a>
-		</li>
-
-		<li>
 			<a href="/tweets/">
 				<% if @twitter_active %>
 					<%= image_tag("TwitterIconColor.png", class:"img-responsive") %>
@@ -78,17 +90,6 @@
 					<%= image_tag("TwitterIcon.png", class:"img-responsive") %>
 				<% end %>
 				<h5>TWITTER</h5>
-			</a>
-		</li>
-
-		<li>
-			<a href="/calendars/">
-				<% if @calendar_active %>
-					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
-				<% else %>
-					<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
-				<% end %>
-				<h5>CALENDAR</h5>
 			</a>
 		</li>
   </ul>
