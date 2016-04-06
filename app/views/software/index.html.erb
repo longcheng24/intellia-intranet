@@ -16,5 +16,9 @@
   <div>
     <%= render("rd") %>
   </div>
+  <% elsif current_user.corporate?%>
+  <div>
+    <%= render("cp") %>
+  </div>
   <% end %>
 <% end %>
