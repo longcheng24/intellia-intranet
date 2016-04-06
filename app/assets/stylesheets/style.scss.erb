@@ -1,6 +1,6 @@
 //= depend_on_asset "intranet_bg.jpg"
 html{
-  /*overflow: hidden;*/
+  line-height: 1.5;
   h1,h2,h3,h4,h5,h6,p,label{
     color:#FFF;
   }
@@ -43,10 +43,14 @@ html{
       color: #f8f8f8;
     }
     .articleGrid{
-      min-height: 25vh;
+      min-height: 21vh;
+      @media all and (min-width: 1200px){
+        min-height: 26vh;
+      }
       h5 a{
         text-transform: uppercase;
-        color: #f8f8f8
+        color: #f8f8f8;
+        line-height:1.5;
       }
     }
     .articleSerach{
@@ -71,6 +75,8 @@ html{
       }
       position: relative;
       .intellia-profile-logo{
+        max-width: 50%;
+        height: auto;
         position: absolute;
         bottom:20px;
         left:25%;
@@ -250,11 +256,13 @@ html{
         width: 10px;
       }
       .custCard{
-        border: gray 1px solid;
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
+        background: rgba(255,255,255,0.10);
+        border: 1px solid rgba(255,255,255,0.15);
+        margin-bottom: 20px;
+        padding:15px;
+        @media all and (min-width: 992px){
+          margin-bottom:30px;
+        }
       }
       .readMore{
 
@@ -451,7 +459,7 @@ html{
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
-    #twitterContainer{
+    #twitterContainer, .tab-pane, .calendar_pane{
         background-color: rgba(255,255,255,0.15);
         padding: 20px;
         margin-top: 20px;

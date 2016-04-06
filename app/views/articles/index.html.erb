@@ -13,23 +13,18 @@
     </div>
   </div><!--END row title/search-->
   <div class="row"><!--START row ARTICLE-->
-    <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:6" class="col-md-6 ">
-<div class="custCard articleGrid">
-      <h5><a ng-href="{{article.link}}">{{ article.title}}</a></h5>
-
-      <div ng-if="article.author" class="authorLine">{{ article.author}}</div>
-      <div ng-if="!article.author" class="authorLine">John Doe</div>
-
-      <div class="dateLine"><i>{{ article.published_date }}</i></div>
-      <a ng-href="{{article.link}}">Read More</a>
-</div>
+    <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:6" class="col-lg-6">
+      <div class="custCard articleGrid">
+        <h5><a ng-href="{{article.link}}">{{ article.title}}</a></h5>
+        <p ng-if="article.author" class="authorLine">{{ article.author}}</p>
+        <p ng-if="!article.author" class="authorLine">Genome Web</p>
+        <p class="dateLine"><em>{{ article.published_date }}</em></p>
+        <p><a ng-href="{{article.link}}">Read More</a></p>
+      </div>
     </div>
-
     <div class="clear"></div>
     <div class="col-sm-12">
       <dir-pagination-controls max-size="5" class="article-nav center-block" direction-links="true" boundary-links="true" ></dir-pagination-controls>
     </div>
-
   </div>
-
 </div>
