@@ -18,9 +18,10 @@ class User < ActiveRecord::Base
   HUMANRESOURCES  = 10
   FINANCE         = 20
   RESEARCH        = 30
+  CORPORATE       = 40
 
-  DEPARTMENT_NAMES = ['Human Resources', 'Finance', 'R&D']
-  DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH]
+  DEPARTMENT_NAMES = ['Human Resources', 'Finance', 'Research and Development', 'Corporate']
+  DEPARTMENT_VALUES = [HUMANRESOURCES, FINANCE, RESEARCH, CORPORATE]
 
   def self.departments
     DEPARTMENT_NAMES.map.with_index { | name, i | [ name, DEPARTMENT_VALUES[i] ] }
@@ -50,4 +51,7 @@ class User < ActiveRecord::Base
     department == RESEARCH
   end
 
+  def research_corporate?
+    department == CORPORATE
+  end
 end

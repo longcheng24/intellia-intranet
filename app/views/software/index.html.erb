@@ -1,4 +1,4 @@
-<h1 class="contentTitle">SOFTWARE</h1>
+<h1 class="contentTitle">MY TOOLS</h1>
 
 
 <% if current_user.admin %>
@@ -15,6 +15,10 @@
   <% elsif current_user.research_development?%>
   <div>
     <%= render("rd") %>
+  </div>
+  <% elsif current_user.corporate?%>
+  <div>
+    <%= render("cp") %>
   </div>
   <% end %>
 <% end %>
