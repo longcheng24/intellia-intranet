@@ -18,7 +18,7 @@ html{
   }
   body{
   background:url('<%= asset_path('intranet_bg.jpg') %>');
-  background-size: 100% 100vh;
+  background-size: cover;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
     h1{
@@ -86,11 +86,17 @@ html{
           }
         }
         .lastLoginLine{
+          p{
+            white-space: nowrap;
+            @media all and (min-width: 992px){
+              font-size:.85vw;
+            }
+          }
           .logout, .edit{
             width:47%;
           }
           .logout{
-            margin-right: 3%;
+            /*margin-right: 3%;*/
           }
         }
       }
@@ -129,6 +135,9 @@ html{
       height: 100vh;
       h5{
         color:#6c6c6c;
+        @media all and (min-width: 1200px){
+          font-size:.75vw;
+        }
       }
       a{
         h5:hover{
@@ -147,6 +156,9 @@ html{
       }
       ul{
         padding: 0 25px;
+        @media all and (min-width: 1200px){
+          padding:0;
+        }
         background: rgba(206, 217, 218, 0.8);
         li{
           height:25vh;
@@ -370,7 +382,7 @@ html{
       BUTTONS
     ***/
     .btn{
-      padding: 10px;
+      padding: 10px 5px;
       color:#FFF;
       border-radius: 0;
       background-color: transparent;
