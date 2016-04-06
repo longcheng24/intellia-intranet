@@ -92,5 +92,23 @@
 				<h5>TWITTER</h5>
 			</a>
 		</li>
+
+		<li>
+			<a href="/calendars/">
+				<% if @calendar_active %>
+					<%= image_tag("CalendarIconColor.png", class:"img-responsive") %>
+				<% else %>
+					<%= image_tag("CalendarIcon.png", class:"img-responsive") %>
+				<% end %>
+				<h5>CALENDAR</h5>
+			</a>
+		</li>
+
+    <li>
+			<a href="/users/">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				<h5>USERS</h5>
+			</a>
+		</li>
   </ul>
 </div><!--END menu column mobile-->

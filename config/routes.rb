@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   # resources :users
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :index]
 
   resources :feeds
   resources :articles
