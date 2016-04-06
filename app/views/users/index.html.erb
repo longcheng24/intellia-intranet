@@ -1,0 +1,33 @@
+<div ng-controller="JsonUserCtrl" ng-init="setup()"><!--START index users json-->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="glyphicon glyphicon-search"></i>
+          </div>
+        <input type="text" class="form-control" placeholder="Employee Search" ng-model="search">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="plContainer">
+  <div ng-repeat="user in users | filter:search" class="profileList" ng-if="user.id != <%= current_user.id %>">
+    <div class="profileRow">
+      <div class="profilePic" ng-if="user.photo.photo.thumb.url">
+        <img src="{{ user.photo.photo.thumb.url }}" />
+      </div>
+
+      <div class="profilePic" ng-if="!user.photo.photo.url">
+        <%= image_tag('login_logo.png', class: 'img-responsive') %>
+      </div>
+
+      <div class="profileName">
+        <a ng-href="/users/{{user.id}}">{{ user.full_name}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!--END index users json-->
