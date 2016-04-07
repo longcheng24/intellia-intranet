@@ -15,11 +15,11 @@
   <div class="row"><!--START row ARTICLE-->
     <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:6" class="col-lg-6">
       <div class="custCard articleGrid">
-        <h5><a ng-href="{{article.link}}">{{ article.title}}</a></h5>
+        <h5><a ng-href="{{article.link}}" target="blank">{{ article.title}}</a></h5>
         <p ng-if="article.author" class="authorLine">{{ article.author}}</p>
         <p ng-if="!article.author" class="authorLine">Genome Web</p>
         <p class="dateLine"><em>{{ article.published_date }}</em></p>
-        <p><a ng-href="{{article.link}}">Read More</a></p>
+        <p><a ng-href="{{article.link}}" target="blank">Read More</a></p>
       </div>
     </div>
     <div class="clear"></div>
