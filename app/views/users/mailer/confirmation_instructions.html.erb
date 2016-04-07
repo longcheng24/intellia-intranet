@@ -19,7 +19,7 @@
           <tbody>
             <tr style="border: 0;">
               <td style="border: 0;">
-                <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 22px;line-height: 25px;color: #10477f;text-align: left;">Welcome <%= @email %>!</h1> 
+                <h1 style="font-family: Arial, Helvetica, sans-serif;font-size: 22px;line-height: 25px;color: #333333;text-align: left;">Welcome <%= @email %>!</h1> 
                 <p style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;line-height: 24px;color: #333333;">OneIntellia is Intellia Therapeutics’ new intranet solution where you can access all your tools and relevant news, in one convenient place.</p>
                 <p style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;line-height: 24px;color: #333333;">Please click the link below to confirm your account.</p>
                 <p style="font-family: Arial, Helvetica, sans-serif;font-size: 16px;line-height: 24px;color: #333333;"><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
