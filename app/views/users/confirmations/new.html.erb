@@ -1,21 +1,17 @@
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4 login_panel">
     <%= image_tag("intellia_logo_grey.png", class: "img-responsive center-block", alt: 'Intellia Logo') %>
-    <h3>RESEND CONFIRMATION</h3>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <h2>RESEND CONFIRMATION</h2>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+      <div class="actions">
+        <%= f.submit "RESEND CONFIRMATION", class: 'btn' %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "RESEND CONFIRMATION", class: 'btn' %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
-</div>
 </div>
