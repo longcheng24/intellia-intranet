@@ -1,22 +1,24 @@
 <div class="card">
   <div class="softwareAdminTab">
-      <a href="#first" aria-controls="first" role="tab" data-toggle="tab" class="activeTab"><h5>HUMAN RESOURCES</h5></a>
-      <a href="#second" aria-controls="second" role="tab" data-toggle="tab"><h5>FINANCE</h5></a>
-      <a href="#third" aria-controls="third" role="tab" data-toggle="tab"><h5>RESEARCH & DEVELOPMENT</h5></a>
-      <a href="#fourth" aria-controls="fourth" role="tab" data-toggle="tab"><h5>CORPORATE</h5></a>
+    <a href="#first" aria-controls="first" role="tab" data-toggle="tab" class="activeTab"><h5>CORPORATE</h5></a>
+      <a href="#second" aria-controls="second" role="tab" data-toggle="tab"><h5>HUMAN RESOURCES</h5></a>
+      <a href="#third" aria-controls="third" role="tab" data-toggle="tab"><h5>FINANCE</h5></a>
+      <a href="#fourth" aria-controls="fourth" role="tab" data-toggle="tab"><h5>RESEARCH & DEVELOPMENT</h5></a>
+
   </div>
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="first">
-      <%= render("hr") %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="second">
-      <%= render("finance") %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="third">
-      <%= render("rd") %>
-    </div>
-    <div role="tabpanel" class="tab-pane" id="fourth">
       <%= render("cp") %>
     </div>
+    <div role="tabpanel" class="tab-pane" id="second">
+      <%= render("hr") %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="third">
+      <%= render("finance") %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="fourth">
+      <%= render("rd") %>
+    </div>
+
   </div>
 </div>
