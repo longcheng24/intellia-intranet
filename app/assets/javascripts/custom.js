@@ -11,7 +11,7 @@ $(document).ready(function(){
     $(this).siblings().removeClass("activeTab")
   })
 
-    $("#twitterContainer").html('<a class="twitter-timeline" href="https://twitter.com/intelliatweets" data-widget-id="713109574643888128" data-chrome="noheader nofooter noborders transparent"></a>')
+    $("#twitterContainer").html('<a class="twitter-timeline" href="https://twitter.com/hashtag/CRISPR" data-widget-id="718211934034616320" data-chrome="noheader nofooter noborders transparent"></a>')
     twttr.widgets.load();
 
 
