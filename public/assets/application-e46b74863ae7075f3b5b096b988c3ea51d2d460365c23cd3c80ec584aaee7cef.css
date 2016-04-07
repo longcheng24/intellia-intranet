@@ -8872,7 +8872,7 @@ div.field, div.actions {
 }
 /* line 1, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html {
-  /*overflow: hidden;*/
+  line-height: 1.5;
   /*body end*/
 }
 /* line 3, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
@@ -8897,8 +8897,8 @@ html input {
 }
 /* line 18, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body {
-  background: url("/assets/intranet_bg-737e41762d714d53502a6817cb030de48510a16051f0e0f809994b0fd35b5229.jpg");
-  background-size: 100% 100vh;
+  background: url("/assets/intranet_bg-f721c303afdab772fa9f962c99eb87bcf12970678bdfa6f6f9765cb2401cfa1d.jpg");
+  background-size: cover;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   /*****
@@ -8953,67 +8953,100 @@ html body .contentTitle {
 }
 /* line 44, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .articleGrid {
-  min-height: 38vh;
+  min-height: 21vh;
 }
-/* line 46, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+@media all and (min-width: 1200px) {
+  /* line 44, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .articleGrid {
+    min-height: 225px;
+  }
+}
+/* line 49, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .articleGrid h5 a {
   text-transform: uppercase;
   color: #f8f8f8;
+  line-height: 1.5;
 }
-/* line 51, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 55, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .articleSerach {
   width: 100%;
   float: none;
   margin-top: 20px;
 }
 @media all and (min-width: 992px) {
-  /* line 51, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  /* line 55, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
   html body .articleSerach {
     width: 60%;
     float: right;
   }
 }
-/* line 60, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 64, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .articleThum {
   overflow: hidden;
   max-width: 100%;
 }
-/* line 64, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 68, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol {
-  margin-top: 20px;
+  padding-top: 20px;
   color: #f8f8f8;
+  height: auto;
+  position: relative;
 }
-/* line 67, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+@media all and (min-width: 992px) {
+  /* line 68, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .profileCol {
+    height: 100vh;
+  }
+}
+/* line 76, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .profileCol .intellia-profile-logo {
+  max-width: 50%;
+  height: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 25%;
+}
+/* line 83, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol .profileInfo {
   margin-bottom: 20px;
 }
-/* line 69, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 85, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol .profileInfo .imageLine img {
   border-radius: 50%;
 }
-/* line 73, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 89, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol .profileInfo .nameLine h4 {
   margin-top: 0;
 }
-/* line 78, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 94, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .profileCol .profileInfo .lastLoginLine p {
+  white-space: nowrap;
+}
+@media all and (min-width: 992px) {
+  /* line 94, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .profileCol .profileInfo .lastLoginLine p {
+    font-size: .85vw;
+  }
+}
+/* line 100, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol .profileInfo .lastLoginLine .logout, html body .profileCol .profileInfo .lastLoginLine .edit {
   width: 47%;
 }
-/* line 81, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 103, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .profileCol .profileInfo .lastLoginLine .logout {
-  margin-right: 3%;
+  /*margin-right: 3%;*/
 }
-/* line 87, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 109, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer {
-  height: 28vh;
+  height: 50vh;
   overflow-y: scroll;
   color: #f8f8f8;
 }
-/* line 91, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 113, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer .profileList {
   clear: both;
 }
-/* line 93, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 115, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer .profileList .profileRow {
   display: flex;
   flex-flow: row wrap;
@@ -9022,68 +9055,81 @@ html body .plContainer .profileList .profileRow {
   margin: 0 -15px 10px -15px;
   padding: 0 15px;
 }
-/* line 100, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 122, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer .profileList .profileRow .profilePic {
   width: 12%;
   margin-right: 5%;
 }
-/* line 103, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 125, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer .profileList .profileRow .profilePic img {
   border-radius: 50%;
   display: block;
   max-width: 100%;
   height: auto;
 }
-/* line 110, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 132, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .plContainer .profileList .profileRow .profileName {
   width: 83%;
 }
-/* line 116, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 138, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol {
   position: relative;
+  height: 100vh;
 }
-/* line 118, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 141, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol h5 {
   color: #6c6c6c;
 }
-/* line 121, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+@media all and (min-width: 1200px) {
+  /* line 141, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .menuCol h5 {
+    font-size: .75vw;
+  }
+}
+/* line 147, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol a {
   color: #000;
 }
-/* line 122, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 148, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol a h5:hover {
   color: #cb481e;
 }
-/* line 128, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 154, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol a:hover {
   color: #cb481e;
   text-decoration: none;
 }
-/* line 132, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 158, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol a:active {
   color: #cb481e;
 }
-/* line 136, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 162, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol ul {
   padding: 0 25px;
   background: rgba(206, 217, 218, 0.8);
 }
-/* line 139, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+@media all and (min-width: 1200px) {
+  /* line 162, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .menuCol ul {
+    padding: 0;
+  }
+}
+/* line 168, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol ul li {
   height: 25vh;
   list-style: none;
   border-bottom: solid 2px #6c6c6c;
   padding-top: 50px;
 }
-/* line 144, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 173, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol ul li:last-child {
   border-bottom: none;
 }
-/* line 149, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 178, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuCol img {
   margin: auto;
 }
-/* line 153, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 182, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuColMobile {
   width: 100%;
   margin: 0;
@@ -9094,7 +9140,7 @@ html body .menuColMobile {
   height: 50px;
   padding-top: 6px;
 }
-/* line 162, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 191, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .menuColMobile ul.menuColMobileMenu {
   padding: 0;
   display: flex;
@@ -9103,92 +9149,118 @@ html body .menuColMobile ul.menuColMobileMenu {
   align-items: center;
   list-style-type: none;
 }
-/* line 170, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
-html body .menuColMobile ul.menuColMobileMenu li a {
-  text-indent: -1000px;
+/* line 200, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .menuColMobile ul.menuColMobileMenu li a .glyphicon-user {
+  font-size: 2em;
+  color: #666;
 }
-/* line 176, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 203, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .menuColMobile ul.menuColMobileMenu li a .glyphicon-user.active {
+  color: #cb481e;
+}
+/* line 207, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .menuColMobile ul.menuColMobileMenu li a h5 {
+  text-indent: -9999px;
+}
+/* line 214, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .authorLine, html body .dateLine {
   color: #cccccc;
 }
-/* line 179, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 217, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .softName {
   margin-top: 25px;
   color: #74b5ae;
 }
-/* line 183, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 221, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .softDesc {
   color: #cccccc;
 }
-/* line 186, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 224, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .softList {
   text-align: center;
   margin-bottom: 50px;
   margin-top: 35px;
 }
-/* line 191, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 229, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .softwareAdminTab a {
   display: inline-block;
   color: #f8f8f8;
   text-decoration: none;
   margin-right: 30px;
 }
-/* line 197, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 235, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .activeTab h5 {
   color: #cb481e;
 }
-/* line 200, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 238, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .sofwareDepTitl {
   color: #f8f8f8;
 }
-/* line 203, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 241, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .softList img {
   max-width: 80%;
   margin: auto;
 }
-/* line 207, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 245, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .contentCol {
   height: 100vh;
   overflow-y: scroll;
 }
-/* line 210, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 248, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .contentCol i {
   color: #FFF;
 }
-/* line 213, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 251, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .contentCol .imageLine img {
   border-radius: 50%;
 }
-/* line 216, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 254, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .contentCol #user_remember_me {
   width: 10px;
 }
-/* line 223, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 257, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .contentCol .custCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+@media all and (min-width: 992px) {
+  /* line 257, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  html body .contentCol .custCard {
+    margin-bottom: 30px;
+  }
+}
+/* line 269, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .contentCol #twitterContainer {
+  display: none;
+}
+/* line 276, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .login_panel {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 20px;
   margin-top: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 230, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 283, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .field i, html body .field input[type="file"], html body .field em {
   color: #FFF;
 }
-/* line 234, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 287, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body #error_explanation {
   width: auto;
 }
-/* line 240, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 293, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .form-group {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 242, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 295, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .form-group .input-group-addon {
   color: #FFF;
   background-color: transparent;
   border: none;
 }
-/* line 247, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 300, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .form-group .form-control {
   color: #FFF;
   background-color: transparent;
@@ -9201,111 +9273,115 @@ html body .form-group .form-control {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-/* line 258, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 311, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .form-group .form-control:focus {
   border-color: transparent;
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 270, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 323, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .article-nav {
   width: 100%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
 @media all and (min-width: 768px) {
-  /* line 276, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+  /* line 329, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
   html body .article-nav {
     width: 50%;
   }
 }
-/* line 283, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 336, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar {
   text-align: center;
   color: #FFF;
 }
-/* line 286, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 339, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table {
   table-layout: fixed;
   margin-top: 20px;
 }
-/* line 291, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 344, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table thead tr th {
   text-align: center;
   font-weight: normal;
   border: none;
 }
-/* line 300, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 353, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table tbody tr td {
   border: none;
   font-size: 1.5em;
 }
-/* line 304, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 357, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table tbody tr td p a {
   font-size: 1em;
 }
-/* line 311, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 361, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body .simple-calendar table.table tbody tr td a {
+  font-size: .75em;
+}
+/* line 367, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table tr {
   border: 0;
 }
-/* line 313, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 369, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar table.table tr td {
   width: 14.28571428571429%;
   height: 100px;
 }
-/* line 319, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 375, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .simple-calendar .table-striped > tbody > tr:nth-child(odd) {
   background-color: transparent;
 }
-/* line 323, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 379, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .calendar_new {
   width: 25%;
   margin-bottom: 20px;
 }
-/* line 327, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 383, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .new_cal_event {
   color: #FFF;
 }
-/* line 329, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 385, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .new_cal_event input {
   margin-bottom: 10px;
 }
-/* line 332, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 388, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .new_cal_event input[type="text"] {
   color: #333;
 }
-/* line 341, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 397, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .btn {
-  padding: 10px;
+  padding: 10px 5px;
   color: #FFF;
   border-radius: 0;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
   font-size: .85em;
 }
-/* line 348, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 404, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .btn:hover {
   background-color: rgba(255, 255, 255, 0.15);
   color: #FFF;
 }
-/* line 358, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 414, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body #new_user input {
   width: 100%;
 }
-/* line 361, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 417, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body #new_user input[type="email"], html body #new_user input[type="password"] {
   background-color: #FFF !important;
   border: none;
   /*the following  is a chrome hack to override yellow color*/
 }
-/* line 365, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 421, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body #new_user input[type="email"]:-webkit-autofill, html body #new_user input[type="password"]:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 100px #fff inset;
   -moz-box-shadow: 0 0 0 100px #fff inset;
   box-shadow: 0 0 0 100px #fff inset;
 }
-/* line 372, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 428, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body select {
   background: rgba(255, 255, 255, 0.25);
   color: #FFF;
@@ -9317,43 +9393,47 @@ html body select {
   -moz-appearance: none;
   appearance: none;
 }
-/* line 383, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 439, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > li > a, html body .pagination > li > span {
   background-color: transparent;
   color: #74b5ae;
 }
-/* line 387, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 443, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > li > a:hover, html body .pagination > li > span:hover, html body .pagination > li > a:focus, html body .pagination > li > span:focus {
   color: #FFF;
   background-color: #74b5ae;
   border-color: #74b5ae;
 }
-/* line 392, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 448, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > .active > a, html body .pagination > .active > span, html body .pagination > .active > a:hover, html body .pagination > .active > span:hover, html body .pagination > .active > a:focus, html body .pagination > .active > span:focus {
   background-color: #74b5ae;
   border-color: #74b5ae;
 }
-/* line 396, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 452, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > .disabled > span, html body .pagination > .disabled > span:hover, html body .pagination > .disabled > span:focus, html body .pagination > .disabled > a, html body .pagination > .disabled > a:hover, html body .pagination > .disabled > a:focus {
   color: #FFF;
   background-color: transparent;
 }
-/* line 400, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 456, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > li:last-child > a, html body .pagination > li:last-child > span {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 404, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+/* line 460, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
 html body .pagination > li:first-child > a, html body .pagination > li:first-child > span {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 408, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
-html body #twitterContainer {
+/* line 464, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body #twitterContainer, html body .tab-pane, html body .calendar_pane, html body .profile_pane {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 20px;
   margin-top: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* line 470, /Users/brickfish/Sites/intellia-intranet/app/assets/stylesheets/style.scss.erb */
+html body #twitterContainer iframe p, html body .tab-pane iframe p, html body .calendar_pane iframe p, html body .profile_pane iframe p {
+  font-size: 1.5em;
 }
 
 /*html end*/
