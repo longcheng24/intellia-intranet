@@ -4,18 +4,30 @@
 <% else %>
   <% if current_user.human_resources? %>
   <div>
+    <div class="row">
+      <h5 class="col-md-12 sofwareDepTitl">HUMAN RESOURCES</h5>
+    </div>
     <%= render("hr") %>
   </div>
-  <% elsif current_user.finance?%>
+  <% elsif current_user.finance? %>
   <div>
+    <div class="row">
+      <h5 class="col-md-12 sofwareDepTitl">FINANCE</h5>
+    </div>
     <%= render("finance") %>
   </div>
-  <% elsif current_user.research_development?%>
+  <% elsif current_user.research_development? %>
   <div>
+    <div class="row">
+      <h5 class="col-md-12 sofwareDepTitl">RESEARCH AND DEVELOPMENT</h5>
+    </div>
     <%= render("rd") %>
   </div>
-  <% elsif current_user.corporate?%>
+  <% else current_user.corporate? %>
   <div>
+    <div class="row">
+      <h5 class="col-md-12 sofwareDepTitl">CORPORATE</h5>
+    </div>
     <%= render("cp") %>
   </div>
   <% end %>

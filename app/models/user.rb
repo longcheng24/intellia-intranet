@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
     department == RESEARCH
   end
 
-  def research_corporate?
+  def corporate?
     department == CORPORATE
   end
 end
