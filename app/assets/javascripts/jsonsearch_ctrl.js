@@ -12,7 +12,13 @@
       $scope.search = '';     // set the default search/filter term
     }
 
+    $scope.articleClick = function($url){
+      window.open($url)
+    }
+
     window.scope = $scope;
+
+
 
   });
 
@@ -27,6 +33,7 @@
 
     window.scope = $scope;
   });
+
 
 
 }());
