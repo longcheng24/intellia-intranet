@@ -14,7 +14,7 @@
   </div><!--END row title/search-->
   <div class="row"><!--START row ARTICLE-->
     <div dir-paginate="article in articles | orderBy:'-published_date' | filter:search | itemsPerPage:6" class="col-lg-6">
-      <div class="custCard articleGrid">
+      <div class="custCard articleGrid" ng-click='articleClick(article.link)'>
         <h5><a ng-href="{{article.link}}" target="blank">{{ article.title}}</a></h5>
         <p ng-if="article.author" class="authorLine">{{ article.author}}</p>
         <p ng-if="!article.author" class="authorLine">Genome Web</p>
