@@ -22,7 +22,7 @@
         <%= f.text_field :title, autofocus: true %>
       </div>
 
-      <div class="field">
+      <div class="field dropdown-con">
         <%= f.label :department %><br />
         <%= f.select :department, User.departments, prompt: 'Select Your Department', department: true, class:'dropdown-menu', autofocus: 'true' %>
       </div>
