@@ -1,3 +1,9 @@
+==BEFORE DEPLOYING TO HEROKU:
+
+You must clean your local assets and precompile:
+	<code>rake assets:clean</code>
+	<code>rake assets:precompile</code>
+	
 ==RSS NEWSFEED(S) + ARTICLES ON LOCALHOST
 
 Once you've added your rss feeds locally at /feeds/new, you'll need to run a rake task to get feeds into your DB:
